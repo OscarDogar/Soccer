@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using Soccer.Common.Helpers;
 using Soccer.Common.Services;
 using Soccer.Prism.ViewModels;
 using Soccer.Prism.Views;
@@ -31,7 +32,10 @@ namespace Soccer.Prism
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.Register<IApiService, ApiService>();
+            containerRegistry.Register<ITransformHelper, TransformHelper>();
             containerRegistry.RegisterForNavigation<TournamentsPage, TournamentsPageViewModel>();
+            containerRegistry.RegisterForNavigation<GroupsPage, GroupsPageViewModel>();
+            containerRegistry.RegisterForNavigation<MatchesPage, MatchesPageViewModel>();
         }
     }
 }
